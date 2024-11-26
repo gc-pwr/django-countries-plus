@@ -34,6 +34,8 @@ class Country(models.Model):
     geonameid = models.IntegerField(blank=True, null=True)
     neighbours = models.CharField(max_length=255, blank=True, null=True)
     equivalent_fips_code = models.CharField(max_length=4, blank=True, null=True)
+    # citizenship requirements
+    citizenship_with_passport = models.BooleanField(default=True)
 
     @staticmethod
     def get_by_request(request) -> "Country":
